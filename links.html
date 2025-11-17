@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">My Social Links</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Custom font import (Inter) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Light background */
+        }
+        .tiktok-btn {
+            background-color: #000000;
+            color: #ffffff;
+            transition: transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        /* Custom shadow to mimic the TikTok logo effect (subtle cyan/magenta offset) */
+        .tiktok-btn:hover {
+            box-shadow: 0 0 10px rgba(255, 0, 80, 0.5), 0 0 15px rgba(0, 255, 238, 0.5);
+            transform: scale(1.02);
+        }
+        .instagram-btn {
+            /* Instagram Gradient (simplified) */
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+            transition: transform 0.1s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .instagram-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] body {
+            text-align: right;
+        }
+        
+        /* Language Switcher Styles */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        [dir="rtl"] .lang-switcher {
+            right: auto;
+            left: 20px;
+        }
+        
+        /* Fix dropdown position for RTL */
+        [dir="rtl"] #language-dropdown-menu {
+            right: auto;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4" dir="ltr">
+
+    <!-- Language Switcher (Top Right) -->
+    <div class="lang-switcher">
+        <div class="relative inline-block text-left" id="language-switcher-container">
+            <button id="current-language-button" type="button" 
+                    class="inline-flex justify-center items-center rounded-lg border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out" 
+                    aria-expanded="false" aria-haspopup="true">
+                <!-- Content will be set by JS -->
+            </button>
+            
+            <div id="language-dropdown-menu" 
+                    class="hidden absolute right-0 z-50 mt-2 w-40 origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div class="py-1">
+                    <a href="#" data-lang="nl" class="lang-option flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out">
+                        Nederlands
+                    </a>
+                    <a href="#" data-lang="en" class="lang-option flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out">
+                        English
+                    </a>
+                    <a href="#" data-lang="fa" class="lang-option flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out">
+                        فارسی
+                    </a>
+                    <a href="#" data-lang="ar" class="lang-option flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition duration-150 ease-in-out">
+                        العربية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Card Container -->
+    <div class="w-full max-w-sm p-8 bg-white rounded-xl shadow-2xl space-y-6">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800" data-i18n="heading">
+            Find Me Online
+        </h1>
+        <p class="text-center text-gray-500 mb-6" data-i18n="subtitle">
+            Connect with me on social media!
+        </p>
+        
+        <!-- TikTok Button -->
+        <a href="https://www.tiktok.com/@lex.novus?_r=1&_t=ZN-91GU74eioWk" class="tiktok-btn w-full flex items-center justify-center py-4 px-6 rounded-lg font-bold text-lg uppercase tracking-wider" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-tiktok text-2xl mr-3"></i>
+            <span data-i18n="tiktok">Follow on TikTok</span>
+        </a>
+
+        <!-- Instagram Button -->
+        <a href="https://www.instagram.com/law_lex_novus?igsh=MWRhNTMzcm44YXR0ZA==" class="instagram-btn w-full flex items-center justify-center py-4 px-6 rounded-lg font-bold text-lg uppercase tracking-wider" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram text-2xl mr-3"></i>
+            <span data-i18n="instagram">Follow on Instagram</span>
+        </a>
+        
+        <!-- Back to Main Site Button -->
+        <a href="index.html" class="w-full flex items-center justify-center py-3 px-6 rounded-lg font-semibold text-base bg-gray-200 text-gray-800 hover:bg-gray-300 transition duration-200">
+            <i class="fas fa-arrow-left text-lg mr-2"></i>
+            <span data-i18n="back">Back to Website</span>
+        </a>
+    </div>
+
+    <script>
+        // --- TRANSLATIONS ---
+        const translations = {
+            'nl': {
+                'title': 'Mijn Sociale Links',
+                'heading': 'Vind Mij Online',
+                'subtitle': 'Verbind met mij op sociale media!',
+                'tiktok': 'Volg op TikTok',
+                'instagram': 'Volg op Instagram',
+                'back': 'Terug naar Website'
+            },
+            'en': {
+                'title': 'My Social Links',
+                'heading': 'Find Me Online',
+                'subtitle': 'Connect with me on social media!',
+                'tiktok': 'Follow on TikTok',
+                'instagram': 'Follow on Instagram',
+                'back': 'Back to Website'
+            },
+            'fa': {
+                'title': 'لینک‌های اجتماعی من',
+                'heading': 'مرا آنلاین پیدا کنید',
+                'subtitle': 'با من در شبکه‌های اجتماعی در ارتباط باشید!',
+                'tiktok': 'دنبال کنید در تیک‌تاک',
+                'instagram': 'دنبال کنید در اینستاگرام',
+                'back': 'بازگشت به وب‌سایت'
+            },
+            'ar': {
+                'title': 'روابطي الاجتماعية',
+                'heading': 'تواصل معي',
+                'subtitle': 'تواصل معي على وسائل التواصل الاجتماعي!',
+                'tiktok': 'تابعني على تيك توك',
+                'instagram': 'تابعني على انستغرام',
+                'back': 'العودة إلى الموقع'
+            }
+        };
+
+        const languageNames = {
+            'nl': 'Nederlands',
+            'en': 'English',
+            'fa': 'فارسی',
+            'ar': 'العربية'
+        };
+
+        // Get language from localStorage (same as main site)
+        let currentLang = localStorage.getItem('lang');
+        if (!currentLang) {
+            currentLang = 'nl'; // Default to Dutch
+            localStorage.setItem('lang', 'nl');
+        }
+
+        const body = document.body;
+        const currentLangButton = document.getElementById('current-language-button');
+        const dropdownMenu = document.getElementById('language-dropdown-menu');
+        const langOptions = document.querySelectorAll('.lang-option');
+
+        function toggleDropdown() {
+            const isExpanded = dropdownMenu.classList.contains('hidden');
+            dropdownMenu.classList.toggle('hidden', !isExpanded);
+            currentLangButton.setAttribute('aria-expanded', isExpanded);
+        }
+
+        function updateLanguageButton() {
+            currentLangButton.innerHTML = languageNames[currentLang];
+        }
+
+        function setDirection(lang) {
+            if (lang === 'fa' || lang === 'ar') {
+                body.setAttribute('dir', 'rtl');
+            } else {
+                body.setAttribute('dir', 'ltr');
+            }
+        }
+
+        function applyTranslation(lang) {
+            const dictionary = translations[lang];
+            if (!dictionary) return;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (dictionary[key]) {
+                    if (element.tagName === 'TITLE') {
+                        document.title = dictionary[key];
+                    } else {
+                        element.textContent = dictionary[key];
+                    }
+                }
+            });
+        }
+
+        function initI18n() {
+            applyTranslation(currentLang);
+            setDirection(currentLang);
+            updateLanguageButton();
+
+            currentLangButton.addEventListener('click', toggleDropdown);
+
+            langOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const newLang = e.target.getAttribute('data-lang');
+                    if (newLang && newLang !== currentLang) {
+                        currentLang = newLang;
+                        localStorage.setItem('lang', currentLang);
+                        applyTranslation(currentLang);
+                        setDirection(currentLang);
+                        updateLanguageButton();
+                    }
+                    toggleDropdown();
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!document.getElementById('language-switcher-container').contains(event.target)) {
+                    dropdownMenu.classList.add('hidden');
+                    currentLangButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        initI18n();
+    </script>
+
+</body>
+</html>
