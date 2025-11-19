@@ -14,6 +14,39 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 const langMobileOptions = document.querySelectorAll('.lang-mobile-option');
 
+// Cookie Banner Elements
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptCookiesButton = document.getElementById('accept-cookies');
+const declineCookiesButton = document.getElementById('decline-cookies');
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* --- COOKIE BANNER LOGIC ADDED --- */
+function initCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    if (!banner) return;
+
+    // Read saved preference
+    const decision = localStorage.getItem('cookieConsent');
+
+    if (!decision) {
+        banner.classList.remove('cookie-hidden');
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.add('cookie-hidden');
+    });
+
+    declineBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.classList.add('cookie-hidden');
+    });
+}
+
 // --- MOBILE MENU FUNCTIONALITY ---
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
@@ -372,6 +405,7 @@ function sendEmail(e) {
 
 // --- APPLICATION START ---
 initI18n();
+initCookieBanner();
 
 if (form) {
     form.addEventListener('submit', sendEmail);
