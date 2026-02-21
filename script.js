@@ -1,6 +1,6 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// --- GLOBAL ELEMENT REFERENCES ---
+// --- GLOBALE ELEMENTEN ---
 const body = document.body;
 const currentLangButton = document.getElementById('current-language-button');
 const dropdownMenu = document.getElementById('language-dropdown-menu');
@@ -9,17 +9,17 @@ const form = document.getElementById('contactForm');
 const submitButton = document.getElementById('submitButton');
 const formMessage = document.getElementById('formMessage');
 
-// Mobile menu elements
+// Mobiele menu elementen
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 const langMobileOptions = document.querySelectorAll('.lang-mobile-option');
 
-// Cookie Banner Elements
+// Cookie Banner Elementen
 const cookieBanner = document.getElementById('cookie-banner');
 const acceptCookiesButton = document.getElementById('accept-cookies');
 const declineCookiesButton = document.getElementById('decline-cookies');
 
-/* --- COOKIE BANNER LOGIC --- */
+/* --- COOKIE BANNER LOGICA --- */
 function initCookieBanner() {
     if (!cookieBanner) return;
     const decision = localStorage.getItem('cookieConsent');
@@ -36,14 +36,27 @@ function initCookieBanner() {
     });
 }
 
-// --- MOBILE MENU ---
+// --- MOBIEL MENU TOGGLE ---
 if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 }
 
-// --- I18N SETUP ---
+// --- TAAL DROPDOWN TOGGLE (Bureaublad) ---
+if (currentLangButton && dropdownMenu) {
+    currentLangButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Sluit menu als je ergens anders klikt
+    document.addEventListener('click', () => {
+        dropdownMenu.classList.add('hidden');
+    });
+}
+
+// --- VERTALINGEN ---
 const languageNames = { 'nl': 'Nederlands', 'en': 'English', 'fa': 'فارسی', 'ar': 'العربية' };
 
 const translations = {
@@ -95,7 +108,7 @@ const translations = {
         'navContact': 'Contact',
         'heroTag': 'Lex Novus - Modern Legal Advice',
         'heroTitle': 'Administrative & Social Security Legal Support',
-        'heroBody': 'Legal help and advice regarding social security law. Applying for family reunification and filing administrative objections.',
+        'heroBody': 'Legal help and advice regarding social security law. Family reunification applications and administrative law appeals.',
         'heroButton': 'Get Legal Consultation',
         'heroSocialButton': 'Our Social Links',
         'whyTitle': 'Why Choose Us?',
@@ -115,7 +128,7 @@ const translations = {
         'service3': 'Social Assistance & Public Aid',
         'service3Desc': 'Legal support for welfare benefit matters and representation in disputes.',
         'service4': 'Administrative Law Appeals',
-        'service4Desc': 'Assistance with finding a notary and granting power of attorney to traveling refugees. Applying for family reunification.',
+        'service4Desc': 'Assistance in finding a notary and granting power of attorney for traveling refugees. Family reunification applications.',
         'formTitle': 'Initiate Your Consultation',
         'formSubtitle': 'Fill out the form below. We respond within 3 business days.',
         'formName': 'Full Name',
@@ -136,7 +149,7 @@ const translations = {
         'navContact': 'تماس',
         'heroTag': 'لکس نوووس - مشاوره حقوقی مدرن',
         'heroTitle': 'پشتیبانی حقوقی در امور اداری و تأمین اجتماعی',
-        'heroBody': 'کمک و مشاوره حقوقی در خصوص حقوق تامین اجتماعی. درخواست پیوستن به خانواده و ثبت اعتراضات اداری.',
+        'heroBody': 'کمک و مشاوره حقوقی در زمینه حقوق تامین اجتماعی. درخواست های الحاق به خانواده و اعتراضات حقوق اداری.',
         'heroButton': 'دریافت مشاوره حقوقی',
         'heroSocialButton': 'لینک‌های اجتماعی ما',
         'whyTitle': 'چرا ما را انتخاب کنید؟',
@@ -156,7 +169,7 @@ const translations = {
         'service3': 'کمک‌های اجتماعی و رفاه عمومی',
         'service3Desc': 'پشتیبانی حقوقی برای مسائل مربوط به مزایای رفاهی و اختلافات شهرداری.',
         'service4': 'درخواست‌های تجدیدنظر اداری',
-        'service4Desc': 'کمک در یافتن دفتر اسناد رسمی (نوتر) و دادن وکالت‌نامه به پناهندگان در حال سفر. درخواست پیوستن به خانواده.',
+        'service4Desc': 'کمک در یافتن سردفتر و اعطای وکالتنامه به پناهندگان در حال سفر. درخواست های الحاق به خانواده.',
         'formTitle': 'شروع مشاوره',
         'formSubtitle': 'فرم را پر کنید. ما طی ۳ روز کاری پاسخ می‌دهیم.',
         'formName': 'نام کامل',
@@ -177,7 +190,7 @@ const translations = {
         'navContact': 'اتصل بنا',
         'heroTag': 'ليكس نوفوس - استشارات قانونية حديثة',
         'heroTitle': 'الدعم القانوني في القانون الإداري والضمان الاجتماعي',
-        'heroBody': 'المساعدة والمشورة القانونية حول قانون الضمان الاجتماعي. التقدم بطلبات لم شمل الأسرة وتقديم الاعتراضات الإدارية.',
+        'heroBody': 'المساعدة والمشورة القانونية فيما يتعلق بقانون الضمان الاجتماعي. طلبات لم شمل الأسرة والطعون في القانون الإداري.',
         'heroButton': 'اطلب استشارة قانونية',
         'heroSocialButton': 'روابطنا الاجتماعية',
         'whyTitle': 'لماذا تختارنا؟',
@@ -197,12 +210,12 @@ const translations = {
         'service3': 'المساعدة الاجتماعية والإعانات العامة',
         'service3Desc': 'دعم قانوني لمسائل مزايا الرعاية الاجتماعية والنزاعات مع البلدية.',
         'service4': 'الطعون في القانون الإداري',
-        'service4Desc': 'المساعدة في العثور على كاتب عدل وإعطاء توكيل للاجئين المسافرين. التقدم بطلبات لم شمل الأسرة.',
+        'service4Desc': 'المساعدة في العثور على كاتب عدل ومنح التوكيل للاجئين المسافرين. طلبات لم شمل الأسرة.',
         'formTitle': 'ابدأ استشارتك',
         'formSubtitle': 'يرجى ملء النموذج أدناه. نرد خلال ٣ أيام عمل.',
         'formName': 'الاسم الكامل',
         'formEmail': 'البريد الإلكتروني',
-        'formPhone': 'رقم الهاتف (اختياري)',
+        'formPhone': 'رقم الهاتف (اختیاري)',
         'formType': 'نوع الاستفسار',
         'formTypeSelect': 'اختر مجال قانوني',
         'formTypeOther': 'مسألة قانونية أخرى',
@@ -215,18 +228,21 @@ const translations = {
 
 let currentLang = localStorage.getItem('lang') || 'nl';
 
-// --- UTILITIES ---
+// --- FUNCTIES ---
 function applyTranslation(lang) {
     const dictionary = translations[lang];
     if (!dictionary) return;
+    
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dictionary[key]) el.textContent = dictionary[key];
     });
+
     const placeholderDesc = document.getElementById('details');
     if (placeholderDesc && dictionary['formDescPlaceholder']) {
         placeholderDesc.setAttribute('placeholder', dictionary['formDescPlaceholder']);
     }
+
     if (currentLangButton) currentLangButton.textContent = languageNames[lang];
     body.setAttribute('dir', (lang === 'fa' || lang === 'ar') ? 'rtl' : 'ltr');
 }
@@ -238,8 +254,6 @@ function fixSocialLinks() {
 
     document.querySelectorAll('a').forEach(link => {
         const href = link.href;
-        
-        // Instagram Fix
         if (href.includes('instagram.com/')) {
             const username = href.split('instagram.com/')[1].split('/')[0].split('?')[0];
             if (username && !['p', 'reels', 'stories'].includes(username)) {
@@ -250,8 +264,6 @@ function fixSocialLinks() {
                 });
             }
         }
-        
-        // TikTok Fix
         if (href.includes('tiktok.com/@')) {
             const username = href.split('tiktok.com/')[1].split('/')[0].split('?')[0];
             if (username) {
@@ -265,15 +277,35 @@ function fixSocialLinks() {
     });
 }
 
-// --- INITIALIZE ---
+// --- INITIALISATIE ---
 applyTranslation(currentLang);
 initCookieBanner();
 fixSocialLinks();
 
+// Event Listeners voor taalkeuze (Bureaublad)
+langOptions.forEach(opt => opt.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentLang = e.target.getAttribute('data-lang');
+    localStorage.setItem('lang', currentLang);
+    applyTranslation(currentLang);
+    dropdownMenu.classList.add('hidden');
+}));
+
+// Event Listeners voor taalkeuze (Mobiel)
+langMobileOptions.forEach(opt => opt.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentLang = e.target.getAttribute('data-lang-mobile');
+    localStorage.setItem('lang', currentLang);
+    applyTranslation(currentLang);
+    mobileMenu.classList.add('hidden');
+}));
+
+// --- FORMULIER VERZENDEN ---
 if (form) {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         submitButton.disabled = true;
+        const originalText = submitButton.textContent;
         submitButton.textContent = '...';
         
         const params = {
@@ -286,28 +318,19 @@ if (form) {
 
         emailjs.send('service_v38qw98', 'template_uil4phd', params)
             .then(() => {
-                formMessage.textContent = 'Success!';
+                formMessage.textContent = currentLang === 'nl' ? 'Succesvol verzonden!' : 'Success!';
                 formMessage.className = 'p-3 rounded-xl bg-green-100 text-green-800 text-center';
                 formMessage.classList.remove('hidden');
                 form.reset();
             })
             .catch(() => {
-                formMessage.textContent = 'Error sending.';
+                formMessage.textContent = 'Error.';
                 formMessage.className = 'p-3 rounded-xl bg-red-100 text-red-800 text-center';
                 formMessage.classList.remove('hidden');
             })
             .finally(() => {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Aanvraag Indienen';
+                submitButton.textContent = originalText;
             });
     });
 }
-
-// Language Switchers
-langOptions.forEach(opt => opt.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentLang = e.target.getAttribute('data-lang');
-    localStorage.setItem('lang', currentLang);
-    applyTranslation(currentLang);
-    dropdownMenu.classList.add('hidden');
-}));
