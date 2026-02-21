@@ -3,276 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Lex Novus | Juridisch Advies & Bestuursrecht</title>
+    <title data-i18n="title">Lex Novus | Bezwaarschrift UWV & Juridisch Advies</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     
-    <meta name="description" content="Lex Novus: Legal assistance for Dutch social security, disability claims, welfare benefits, administrative law appeals, and private tax advice for expats.">
-    <meta name="keywords" content="social security law Netherlands, administrative appeals, welfare benefits legal help, expat tax advice, disability claims">
-    <meta name="author" content="Lex Novus">
-    <meta property="og:title" content="Lex Novus | Juridisch Advies">
-    <meta property="og:description" content="Professioneel juridisch advies in Nederland voor bestuursrecht en sociale zekerheid.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lexnovus.nl">
-    <meta property="og:image" content="https://lexnovus.nl/law_office.avif">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Lex Novus | Juridisch Advies">
-    <meta name="twitter:description" content="Professioneel juridisch advies in Nederland">
+    <meta name="description" content="Lex Novus: Expert in het schrijven van bezwaarschriften voor het UWV. Juridische hulp bij Bijstand, WIA/WGA en fiscaal advies voor expats.">
+    <meta name="keywords" content="UWV bezwaarschrift, WIA hulp, Bijstand juridisch advies, belastingadvies expats, bestuursrecht">
 </head>
-<body dir="ltr">
+<body dir="ltr" class="bg-gray-50">
 
-    <header class="primary-bg text-white shadow-lg">
+    <header class="primary-bg text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            
             <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">
                 <span class="accent-text">Lex</span> Novus
             </h1>
 
             <div class="hidden md:flex items-center space-x-6">
                 <div class="relative inline-block text-left" id="language-switcher-container">
-                    <button id="current-language-button" type="button" 
-                            class="inline-flex justify-center items-center w-full rounded-lg border border-transparent shadow-sm px-3 py-2 bg-gray-700 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-yellow-500 transition duration-150 ease-in-out" 
-                            aria-expanded="false" aria-haspopup="true">
+                    <button id="current-language-button" type="button" class="inline-flex justify-center items-center rounded-lg border border-transparent px-4 py-2 bg-gray-700 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none transition">
+                        Nederlands
                     </button>
-                    
-                    <div id="language-dropdown-menu" 
-                            class="hidden absolute right-0 z-50 mt-2 w-40 origin-top-right rounded-md shadow-lg bg-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div id="language-dropdown-menu" class="hidden absolute right-0 z-50 mt-2 w-40 origin-top-right rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1">
-                            <a href="#" data-lang="nl" class="lang-option flex items-center px-4 py-2 text-sm text-white hover:bg-gray-600 transition duration-150 ease-in-out">Nederlands</a>
-                            <a href="#" data-lang="en" class="lang-option flex items-center px-4 py-2 text-sm text-white hover:bg-gray-600 transition duration-150 ease-in-out">English</a>
-                            <a href="#" data-lang="fa" class="lang-option flex items-center px-4 py-2 text-sm text-white hover:bg-gray-600 transition duration-150 ease-in-out">فارسی</a>
-                            <a href="#" data-lang="ar" class="lang-option flex items-center px-4 py-2 text-sm text-white hover:bg-gray-600 transition duration-150 ease-in-out">العربية</a>
+                            <a href="#" data-lang="nl" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Nederlands</a>
+                            <a href="#" data-lang="en" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="#" data-lang="fa" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">فارسی</a>
+                            <a href="#" data-lang="ar" class="lang-option block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">العربية</a>
                         </div>
                     </div>
                 </div>
 
                 <nav class="flex space-x-6 text-sm font-medium">
-                    <a href="#mission" class="hover:accent-text transition duration-200" data-i18n="navMission">Onze Missie</a>
-                    <a href="#services" class="hover:accent-text transition duration-200" data-i18n="navServices">Diensten</a>
-                    <a href="#contact" class="hover:accent-text transition duration-200" data-i18n="navContact">Contact</a>
+                    <a href="#mission" class="hover:accent-text" data-i18n="navMission">Onze Missie</a>
+                    <a href="#services" class="hover:accent-text" data-i18n="navServices">Diensten</a>
+                    <a href="#contact" class="hover:accent-text" data-i18n="navContact">Contact</a>
                 </nav>
             </div>
 
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-700 transition duration-200" aria-label="Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden primary-bg border-t border-gray-700">
-            <div class="px-4 py-3 space-y-3">
-                <a href="#mission" class="block py-2 text-white hover:accent-text transition duration-200" data-i18n="navMission">Onze Missie</a>
-                <a href="#services" class="block py-2 text-white hover:accent-text transition duration-200" data-i18n="navServices">Diensten</a>
-                <a href="#contact" class="block py-2 text-white hover:accent-text transition duration-200" data-i18n="navContact">Contact</a>
-                
-                <div class="pt-3 border-t border-gray-700">
-                    <p class="text-xs text-gray-400 mb-2">Taal / Language:</p>
-                    <div class="grid grid-cols-2 gap-2">
-                        <button data-lang-mobile="nl" class="lang-mobile-option py-2 px-3 bg-gray-700 rounded text-sm hover:bg-gray-600 transition">Nederlands</button>
-                        <button data-lang-mobile="en" class="lang-mobile-option py-2 px-3 bg-gray-700 rounded text-sm hover:bg-gray-600 transition">English</button>
-                        <button data-lang-mobile="fa" class="lang-mobile-option py-2 px-3 bg-gray-700 rounded text-sm hover:bg-gray-600 transition">فارسی</button>
-                        <button data-lang-mobile="ar" class="lang-mobile-option py-2 px-3 bg-gray-700 rounded text-sm hover:bg-gray-600 transition">العربية</button>
-                    </div>
-                </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700 p-4 space-y-3">
+            <a href="#mission" class="block text-white" data-i18n="navMission">Onze Missie</a>
+            <a href="#services" class="block text-white" data-i18n="navServices">Diensten</a>
+            <a href="#contact" class="block text-white" data-i18n="navContact">Contact</a>
+            <div class="pt-3 border-t border-gray-600 grid grid-cols-2 gap-2">
+                <button data-lang-mobile="nl" class="lang-mobile-option py-2 bg-gray-700 rounded text-sm">Nederlands</button>
+                <button data-lang-mobile="en" class="lang-mobile-option py-2 bg-gray-700 rounded text-sm">English</button>
+                <button data-lang-mobile="fa" class="lang-mobile-option py-2 bg-gray-700 rounded text-sm">فارسی</button>
+                <button data-lang-mobile="ar" class="lang-mobile-option py-2 bg-gray-700 rounded text-sm">العربية</button>
             </div>
         </div>
     </header>
 
     <main>
-        
-        <section class="primary-bg text-white pt-8 md:pt-16 pb-12 md:pb-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <span class="text-xs md:text-xl font-semibold accent-text uppercase" data-i18n="heroTag">Lex Novus - Het Nieuwe Recht</span>
-                    <h1 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight" data-i18n="heroTitle">
-                        Bestuursrechtelijke & Sociale Zekerheidshulp
-                    </h1>
-                    <p class="mt-3 md:mt-6 text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed" data-i18n="heroBody">
-                        Juridische hulp en advies rondom sociale zekerheidsrecht. Aanvragen gezinshereniging en doen van bestuursrechtelijke bezwaarschriften.
+        <section class="primary-bg text-white py-16 md:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="accent-text font-semibold uppercase tracking-widest text-sm" data-i18n="heroTag">Lex Novus - Specialist in Bestuursrecht</span>
+                    <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight" data-i18n="heroTitle">Hulp bij Bezwaarschrift UWV & Sociale Zekerheid</h1>
+                    <p class="mt-6 text-lg text-gray-300 leading-relaxed" data-i18n="heroBody">
+                        Heeft u een onterechte beslissing ontvangen van het UWV of de gemeente? Wij zijn gespecialiseerd in het schrijven van krachtige bezwaarschriften, hulp bij WIA/WGA-uitkeringen en juridische bijstand voor de Bijstand.
                     </p>
-                    <div class="mt-4 md:mt-10 flex flex-col space-y-3">
-                        <a href="#contact" class="inline-block px-6 py-3 text-sm md:text-lg font-bold text-gray-900 accent-bg rounded-xl hover:bg-yellow-400 transition duration-300 shadow-xl text-center" data-i18n="heroButton">
-                            Vraag Juridisch Advies Aan
-                        </a>
-                        <a href="links.html" class="inline-block px-6 py-3 text-sm md:text-lg font-bold text-white bg-gray-700 rounded-xl hover:bg-gray-600 transition duration-300 shadow-xl text-center" data-i18n="heroSocialButton">
-                            Onze Sociale Links
-                        </a>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="px-8 py-4 font-bold text-gray-900 accent-bg rounded-xl text-center shadow-lg hover:bg-yellow-400 transition" data-i18n="heroButton">Vraag Advies Aan</a>
+                        <a href="links.html" class="px-8 py-4 font-bold text-white bg-gray-700 rounded-xl text-center hover:bg-gray-600 transition" data-i18n="heroSocialButton">Onze Sociale Links</a>
                     </div>
                 </div>
-                <div class="order-1 md:order-2 flex justify-center">
-                    <img src="law_office.avif" 
-                            alt="Professioneel juridisch kantoor - Lex Novus" 
-                            class="rounded-2xl shadow-custom object-cover w-full max-w-lg"
-                            loading="lazy">
+                <div class="hidden md:flex justify-center">
+                    <img src="law_office.avif" alt="Lex Novus Kantoor" class="rounded-2xl shadow-2xl max-w-full border-4 border-gray-700">
                 </div>
             </div>
         </section>
 
-        <section id="mission" class="py-12 md:py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="whyTitle">Waarom Kiezen Voor Ons?</h3>
-                    <p class="mt-3 md:mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="whySubtitle">
-                        Wij zijn gebaseerd op de principes van toegankelijkheid, expertise en toewijding aan de bescherming van uw rechten in het sociaal bestuursrecht.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md border-t-4 border-t-yellow-500 hover:shadow-lg transition duration-300">
-                        <div class="accent-text text-3xl mb-3">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 11l2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg md:text-xl font-bold text-gray-900" data-i18n="why1Title">Specialisten in Bestuursrecht</h4>
-                        <p class="mt-2 md:mt-3 text-sm md:text-base text-gray-600" data-i18n="why1Body">
-                            Maximale inzet voor uw zaak tegen beslissingen van overheidsinstanties of de gemeente.
-                        </p>
+        <section id="mission" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="whyTitle">Waarom Kiezen Voor Lex Novus?</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto" data-i18n="whySubtitle">Deskundigheid en persoonlijke betrokkenheid bij elke zaak.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-gray-50 rounded-2xl border-t-4 border-yellow-500 shadow-sm">
+                        <h3 class="font-bold text-xl mb-3" data-i18n="why1Title">UWV Specialist</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="why1Body">Maximale inzet voor uw bezwaar tegen beslissingen van het UWV of de gemeente.</p>
                     </div>
-
-                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md border-t-4 border-t-yellow-500 hover:shadow-lg transition duration-300">
-                        <div class="accent-text text-3xl mb-3">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.208 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.832 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.792 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.168 18 16.5 18s-3.332.477-4.5 1.253"></path>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg md:text-xl font-bold text-gray-900" data-i18n="why2Title">Expertise & Inzicht</h4>
-                        <p class="mt-2 md:mt-3 text-sm md:text-base text-gray-600" data-i18n="why2Body">
-                            We blijven op de hoogte van wetswijzigingen om het meest actuele en effectieve advies te bieden in sociale verzekeringen en belastingrecht.
-                        </p>
+                    <div class="p-8 bg-gray-50 rounded-2xl border-t-4 border-yellow-500 shadow-sm">
+                        <h3 class="font-bold text-xl mb-3" data-i18n="why2Title">Expertise & Inzicht</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="why2Body">Actuele kennis van de WIA, WW en Participatiewet voor het beste resultaat.</p>
                     </div>
-
-                    <div class="bg-gray-50 p-6 md:p-8 rounded-xl shadow-md border-t-4 border-t-yellow-500 hover:shadow-lg transition duration-300">
-                        <div class="accent-text text-3xl mb-3">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg md:text-xl font-bold text-gray-900" data-i18n="why3Title">Duidelijke Communicatie</h4>
-                        <p class="mt-2 md:mt-3 text-sm md:text-base text-gray-600" data-i18n="why3Body">
-                            We vertalen ingewikkeld juridisch jargon naar duidelijke taal, zodat u altijd uw opties begrijpt.
-                        </p>
+                    <div class="p-8 bg-gray-50 rounded-2xl border-t-4 border-yellow-500 shadow-sm">
+                        <h3 class="font-bold text-xl mb-3" data-i18n="why3Title">Duidelijke Taal</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="why3Body">Wij vertalen complexe juridische regels naar begrijpelijk en praktisch advies.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-12 md:py-20 primary-bg text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold" data-i18n="servicesTitle">Expertisegebieden</h3>
-                    <p class="mt-3 md:mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-i18n="servicesSubtitle">
-                        Gespecialiseerde begeleiding in sociaal-, belasting- en bestuursrecht voor de Nederlandse context.
-                    </p>
+        <section id="services" class="py-20 primary-bg text-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold" data-i18n="servicesTitle">Expertisegebieden</h2>
+                    <p class="text-gray-400 mt-4" data-i18n="servicesSubtitle">Gespecialiseerde hulp in Nederland.</p>
                 </div>
-
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                    <div class="bg-gray-700 p-5 md:p-6 rounded-xl shadow-md hover:bg-gray-600 transition duration-300">
-                        <h4 class="text-lg md:text-xl font-semibold accent-text" data-i18n="service1">Sociale Zekerheid & Arbeidsongeschiktheid</h4>
-                        <p class="mt-2 text-gray-200 text-xs md:text-sm" data-i18n="service1Desc">Juridische begeleiding bij werknemersverzekeringen, werkloosheid en langdurige arbeidsongeschiktheid, inclusief bezwaar tegen uitkeringsbesluiten.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="font-bold accent-text mb-2" data-i18n="service1">UWV & WIA/WGA Hulp</h4>
+                        <p class="text-sm text-gray-300" data-i18n="service1Desc">Hulp bij het schrijven van een bezwaarschrift en begeleiding bij herbeoordelingen (WIA/WGA/WW).</p>
                     </div>
-                    <div class="bg-gray-700 p-5 md:p-6 rounded-xl shadow-md hover:bg-gray-600 transition duration-300">
-                        <h4 class="text-lg md:text-xl font-semibold accent-text" data-i18n="service2">Fiscaal Recht voor Expats & Particulieren</h4>
-                        <p class="mt-2 text-gray-200 text-xs md:text-sm" data-i18n="service2Desc">Adviesdiensten voor de inkomstenbelasting van particulieren, inclusief jaarlijkse aangiften en fiscale naleving voor internationale bewoners.</p>
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="font-bold accent-text mb-2" data-i18n="service2">Belastingadvies Expats</h4>
+                        <p class="text-sm text-gray-300" data-i18n="service2Desc">Fiscaal advies en hulp bij de aangifte inkomstenbelasting voor expats en internationale particulieren.</p>
                     </div>
-                    <div class="bg-gray-700 p-5 md:p-6 rounded-xl shadow-md hover:bg-gray-600 transition duration-300">
-                        <h4 class="text-lg md:text-xl font-semibold accent-text" data-i18n="service3">Sociale Bijstand & Publieke Hulp</h4>
-                        <p class="mt-2 text-gray-200 text-xs md:text-sm" data-i18n="service3Desc">Juridische ondersteuning bij bijstandszaken en vertegenwoordiging bij geschillen met de gemeentelijke sociale dienst.</p>
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="font-bold accent-text mb-2" data-i18n="service3">Bijstand & Sociale Dienst</h4>
+                        <p class="text-sm text-gray-300" data-i18n="service3Desc">Juridische hulp bij problemen met uw bijstandsuitkering of geschillen met de gemeente.</p>
                     </div>
-                    <div class="bg-gray-700 p-5 md:p-6 rounded-xl shadow-md hover:bg-gray-600 transition duration-300">
-                        <h4 class="text-lg md:text-xl font-semibold accent-text" data-i18n="service4">Bestuursrechtelijke Beroepen</h4>
-                        <p class="mt-2 text-gray-200 text-xs md:text-sm" data-i18n="service4Desc">Hulp bij het vinden van Notaris en geven van machtiging aan reizende vluchtelingen. Aanvragen gezinshereniging.</p>
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h4 class="font-bold accent-text mb-2" data-i18n="service4">Bestuursrechtelijk Bezwaar</h4>
+                        <p class="text-sm text-gray-300" data-i18n="service4Desc">Behandeling van bezwaar en beroep tegen beslissingen van alle Nederlandse overheidsinstanties.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-12 md:py-20 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8 md:mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="formTitle">Start Uw Consultatie</h3>
-                    <p class="mt-3 md:mt-4 text-base md:text-xl text-gray-600" data-i18n="formSubtitle">
-                        Vul het onderstaande formulier in om voorlopige details over uw zaak te verstrekken. Wij nemen binnen maximaal 3 werkdagen contact met u op.
-                    </p>
-                </div>
-
-                <form id="contactForm" class="space-y-5 md:space-y-6 bg-white p-6 md:p-8 rounded-xl shadow-custom border-t-4 border-t-yellow-500">
-                    <div id="formMessage" class="hidden p-3 rounded-xl text-sm font-medium text-center transition duration-300"></div>
-
-                    <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700" data-i18n="formName">Volledige Naam</label>
-                            <input type="text" id="name" required class="mt-1 block w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500 text-sm md:text-base">
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border-t-8 border-yellow-500">
+                    <h3 class="text-3xl font-bold text-center mb-2" data-i18n="formTitle">Start Uw Consultatie</h3>
+                    <p class="text-center text-gray-600 mb-10" data-i18n="formSubtitle">Wij reageren binnen maximaal 3 werkdagen.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div id="formMessage" class="hidden p-4 rounded-xl text-center font-medium"></div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" id="name" required placeholder="Volledige Naam" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-500 outline-none">
+                            <input type="email" id="email" required placeholder="E-mailadres" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-500 outline-none">
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700" data-i18n="formEmail">E-mailadres</label>
-                            <input type="email" id="email" required class="mt-1 block w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500 text-sm md:text-base">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700" data-i18n="formPhone">Telefoonnummer (Optioneel)</label>
-                            <input type="tel" id="phone" class="mt-1 block w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500 text-sm md:text-base">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700" data-i18n="formType">Soort Vraag</label>
-                            <select id="subject" required class="mt-1 block w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500 text-sm md:text-base">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="tel" id="phone" placeholder="Telefoon (Optioneel)" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-500 outline-none">
+                            <select id="subject" required class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-500 outline-none">
                                 <option value="" disabled selected data-i18n="formTypeSelect">Selecteer een rechtsgebied</option>
-                                <option value="Social Security Law" data-i18n="service1">Sociale Zekerheid & Arbeidsongeschiktheid</option>
-                                <option value="Private Income Tax" data-i18n="service2">Fiscaal Recht voor Expats & Particulieren</option>
-                                <option value="Social Assistance" data-i18n="service3">Sociale Bijstand & Publieke Hulp</option>
-                                <option value="Administrative Appeals" data-i18n="service4">Bestuursrechtelijke Beroepen</option>
-                                <option value="Other" data-i18n="formTypeOther">Overige Juridische Kwestie</option>
+                                <option value="UWV" data-i18n="service1">UWV & WIA/WGA</option>
+                                <option value="Tax" data-i18n="service2">Belastingadvies</option>
+                                <option value="Social" data-i18n="service3">Bijstand</option>
+                                <option value="Other" data-i18n="formTypeOther">Overig</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div>
-                        <label for="details" class="block text-sm font-medium text-gray-700" data-i18n="formDesc">Gedetailleerde Zaakbeschrijving</label>
-                        <textarea id="details" rows="5" required class="mt-1 block w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-yellow-500 focus:border-yellow-500 text-sm md:text-base" data-i18n-placeholder="formDescPlaceholder" placeholder="Beschrijf alstublieft uw juridische kwestie, inclusief relevante overheidsinstanties, documenten of deadlines."></textarea>
-                    </div>
-
-                    <div class="pt-2 md:pt-4">
-                        <button id="submitButton" type="submit" class="w-full px-6 md:px-8 py-3 text-base md:text-lg font-bold text-gray-900 accent-bg rounded-xl hover:bg-yellow-400 transition duration-300 transform hover:scale-105 shadow-xl" data-i18n="formSubmit">
-                            Aanvraag Indienen
-                        </button>
-                    </div>
-                    
-                    <script type="text/javascript">
-                        (function(){
-                            emailjs.init({
-                                publicKey: "c5CYw9LOhSyevFl9J",
-                            });
-                        })();
-                    </script>
-                </form>
+                        <textarea id="details" rows="5" required class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-yellow-500 outline-none" data-i18n-placeholder="formDescPlaceholder"></textarea>
+                        <button id="submitButton" type="submit" class="w-full p-5 font-bold text-gray-900 accent-bg rounded-xl shadow-lg hover:scale-[1.02] transition transform" data-i18n="formSubmit">Aanvraag Indienen</button>
+                    </form>
+                </div>
             </div>
         </section>
-        
     </main>
 
-    <footer class="primary-bg text-gray-400 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; <span id="year"></span> <span data-i18n="footer">Lex Novus. Alle rechten voorbehouden.</span></p>
-        </div>
+    <footer class="py-10 primary-bg text-center text-gray-500 text-sm">
+        <p>&copy; <span id="year"></span> Lex Novus. <span data-i18n="footer">Alle rechten voorbehouden.</span></p>
     </footer>
 
-    <div id="cookie-banner" class="cookie-hidden fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex flex-col md:flex-row justify-between items-center shadow-lg z-50">
-        <p class="text-sm md:text-base mb-3 md:mb-0">
-            Deze website gebruikt cookies om uw ervaring te verbeteren.
-        </p>
-        <div class="flex space-x-3">
-            <button id="accept-cookies" class="px-4 py-2 bg-green-500 rounded hover:bg-green-600 transition">
-                Accepteren
-            </button>
-            <button id="decline-cookies" class="px-4 py-2 bg-red-500 rounded hover:bg-red-600 transition">
-                Weigeren
-            </button>
+    <div id="cookie-banner" class="cookie-hidden fixed bottom-6 left-6 right-6 md:left-auto md:max-w-md bg-gray-900 text-white p-6 rounded-2xl shadow-2xl z-[100] border border-gray-700">
+        <p class="text-sm mb-4">Deze website gebruikt cookies om uw ervaring te verbeteren.</p>
+        <div class="flex gap-3">
+            <button id="accept-cookies" class="flex-1 py-2 bg-green-600 rounded-lg font-bold hover:bg-green-700 transition">Accepteren</button>
+            <button id="decline-cookies" class="flex-1 py-2 bg-gray-700 rounded-lg font-bold hover:bg-gray-600 transition">Weigeren</button>
         </div>
     </div>
 
